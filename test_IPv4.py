@@ -92,5 +92,30 @@ def test_del_prefix_with_out_of_range_mask_invalid():
 def test_del_prefix_with_negative_base_invalid():
     pass
 
+#check test cases
+def test_check_ip_within_single_prefix_range_valid():
+    pass
+
+def test_check_ip_within_multiple_prefix_ranges_valid():
+    pass
+
+def test_check_ip_within_prefix_with_smallest_mask_range_valid(): # /32
+    pass
+
+def test_check_ip_within_prefix_with_largest_mask_range_valid(): # /0
+    pass
+
+def test_check_ip_at_the_edge_of_a_prefix_valid():
+    pass
+
+def test_check_ip_with_no_matching_prefix_invalid():
+    pass
+
+def test_check_prefix_with_out_of_range_mask_invalid():
+    pass
+
+def test_check_prefix_with_negative_base_invalid():
+    pass
+
 
 
