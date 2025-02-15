@@ -55,6 +55,7 @@ To generate a detailed test report:
 ```bash
 pytest --html=report.html --self-contained-html
 ```
+(thanks to pytest.ini report automatically generates just by running pytest)
 
 After execution, open `report.html` in a browser to view the results.
 
