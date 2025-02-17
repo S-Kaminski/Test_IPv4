@@ -24,7 +24,6 @@ logger = logging.getLogger(__name__)
 
 @pytest.fixture(scope="session", autouse=True)
 def setup_logging():
-    logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
     # Remove existing handlers to prevent duplicates
