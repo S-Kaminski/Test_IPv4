@@ -10,7 +10,7 @@ This project provides an interface to interact with an IPv4 shared objects (.so)
 
 ### 1. Install System Dependencies
 
-Ensure you have Python 3 and `venv` installed. If not, install them:
+Ensure you have Python 3 and `venv` installed. If not, install them (venv is included in package with python 3.3+):
 
 ```bash
 sudo apt update
@@ -35,7 +35,7 @@ source venv/bin/activate
 
 ```bash
 pip install --upgrade pip
-pip install pytest pytest-html
+pip install pytest pytest-html pytest-metadata pytest-logging
 ```
 
 ---
@@ -55,7 +55,7 @@ To generate a detailed test report:
 ```bash
 pytest --html=report.html --self-contained-html
 ```
-(thanks to pytest.ini report automatically generates just by running pytest)
+(thanks to pytest.ini report automatically generates just by running pytest - must be in a virtual environment to run)
 
 After execution, open `report.html` in a browser to view the results.
 
