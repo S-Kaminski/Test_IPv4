@@ -48,7 +48,7 @@ def add_prefixes(prefixes, count):
     base = 0x0A140000  # 10.20.0.0 as a c_uint value
     mask = 16  # /16 mask
     
-    for i in range(count):  # Try adding the prefix 64 times
+    for i in range(count):  # Try adding the prefix x times
         result = prefixes.add(base + i, mask)
         if result == -1:
             logger.info(f"Failed to add prefix {base + i}/{mask} at iteration {i+1}")
@@ -93,20 +93,20 @@ def test_add_single_prefix_valid(empty_ipv4):
     assert result == 0, f"add(base,mask) function valid test failed - function returned {result}"
 
 def test_add_prefix_with_mask_1_valid(empty_ipv4):
-    base = 0x20408000
-    mask = 1  #works only for mask 8, 16 - crashes for 0,14,15,19-32
+    base = 0x0A140000
+    mask = 1  #returns 0 only for masks 8, 16; crashes for 0,14,15,19-32; returns -1 for 1-7, 9-15, 17-18
     result = empty_ipv4.add(base,int_to_byte(mask))
     assert result == 0, f"add({base},{mask}) function valid test failed - function returned {result}"
 
 #def test_add_prefix_with_smallest_mask_valid(empty_ipv4):
     #base = 0x20408000
-    #mask = 32  #works only for mask 8, 16 - crashes for 0,14,15,19-32
+    #mask = 32  
     #result = empty_ipv4.add(base,mask)
     #assert result == 0, f"add({base},{mask}) function valid test failed - function returned {result}"
 
 #def test_add_prefix_with_largest_mask_valid(): # /0
     #base = 0x20408000
-    #mask = 0  #works only for mask 8, 16 - crashes for 0,14,15,19-32
+    #mask = 0  
     #result = empty_ipv4.add(base,mask)
     #assert result == 0, f"add({base},{mask}) function valid test failed - function returned {result}"
 
